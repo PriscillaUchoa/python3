@@ -13,7 +13,7 @@ df[list] = df[list].apply(pd.to_numeric, errors='coerce')
 estados = df['NM_UF'].unique()
 estadoFiltro = st.selectbox(
     'Qual estado selecionar?',
-     estados)
+     options=['Selecione o Estado'] + estados)
 dadosFiltrados = df[df['NM_UF'] == estadoFiltro]
 if st.checkbox('Mostrar tabela'):
   st.write(dadosFiltrados)
@@ -21,7 +21,7 @@ st.map(dadosFiltrados, latitude="Lat_d", longitude="Long_d")
 
 #Estatística descritiva
 qtdeMunicipios = len(df['NM_MUNIC'].unique())
-st.write("A quantidade de municípios brasileiros com localização quilombola é " + str(qtdeMunicipios))
+st.write("A quantidade de municípios brazileiros com localização quilombola é " + str(qtdeMunicipios))
 
 qtdeComunidades = len(df['NM_AGLOM'].unique())
 st.write("A quantidade de comunidades quilombolas no Brasil é " + str(qtdeComunidades))
