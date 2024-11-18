@@ -21,7 +21,10 @@ st.map(dadosFiltrados, latitude="Lat_d", longitude="Long_d")
 
 #Estatística descritiva
 qtdeMunicipios = len(df['NM_MUNIC'].unique())
-st.write("A quantidade de municípios brazileiros com localização quilombola é " + str(qtdeMunicipios))
+#st.write("A quantidade de municípios brasileiros com localização quilombola é " + str(qtdeMunicipios))
+st.metric('# Municípios', len(df['NM_MUNIC'].unique()))
 
 qtdeComunidades = len(df['NM_AGLOM'].unique())
-st.write("A quantidade de comunidades quilombolas no Brasil é " + str(qtdeComunidades))
+#st.write("A quantidade de comunidades quilombolas no Brasil é " + str(qtdeComunidades))
+st.metric('# Comunidades', len(df['NM_AGLOM'].unique()))
+
